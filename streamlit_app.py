@@ -77,12 +77,12 @@ st.write("z is:",z)
 data=[carat,cut_option,color_option,clarity_option,depth,table,x,y,z]
 
 val=st.button("Predict")
-
+#https://discuss.streamlit.io/t/upload-trained-models-from-github-to-streamlit/41352
 if val:
     if carat and cut_option and color_option and clarity_option and depth and table and x and y and z:
         res=get_dataframe(data) # convert data into dataframe
-        model=pickle.load(open('picklefile/preprocessor.pkl','rb')) #load_model()      # model
-        processing=pickle.load(open('picklefile/preprocessor.pkl','rb'))#preprocessor() # preprocessing our model
+        model=pickle.load(open('./picklefile/LinearModel.pkl','rb')) #load_model()      # model
+        processing=pickle.load(open('./picklefile/preprocessor.pkl','rb'))#preprocessor() # preprocessing our model
 
         scaled_data=processing.transform(res) # transfomr
         pred=model.predict(scaled_data) #predict
