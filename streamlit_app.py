@@ -17,14 +17,14 @@ def get_dataframe(data):
 
 def load_model():
     model=None
-    with open('picklefile/LinearModel.pkl','rb') as f:
+    with open('Diamond_price/picklefile/LinearModel.pkl','rb') as f:
         model=pickle.load(f)   
         return model
 
         # x=pickle.load(open('./picklefile/preprocessor.pkl','rb'))    
 
 def preprocessor():
-    processor=pickle.load(open('picklefile/preprocessor.pkl','rb'))    
+    processor=pickle.load(open('Diamond_price/picklefile/preprocessor.pkl','rb'))    
     return processor
 
 
